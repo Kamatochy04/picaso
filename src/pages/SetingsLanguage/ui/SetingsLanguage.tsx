@@ -6,20 +6,18 @@ import styles from './setingsLanguage.module.scss';
 
 export const SetingsLanguage = () => {
   return (
-    <div className={`${styles.language} show-anim`}>
-      <div className={`container ${styles.container}`}>
-        <div className={styles.language__container}>
-          {languageItems.map((item, id, arr) => {
-            return (
-              <ListItem
-                key={id}
-                text={item.language}
-                isBlocked={item.isBlocked}
-                isBorder={id + 1 !== arr.length ? true : false}
-              />
-            );
-          })}
-        </div>
+    <div className={`container ${styles.container}`}>
+      <div className={styles.language__container}>
+        {languageItems.map((item, id, arr) => {
+          return (
+            <ListItem
+              key={id}
+              text={item.language}
+              isBlocked={item.isBlocked}
+              isBorder={id + 1 !== arr.length ? true : false}
+            />
+          );
+        })}
       </div>
     </div>
   );
