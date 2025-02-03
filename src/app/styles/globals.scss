@@ -1,0 +1,132 @@
+@import url('./fonts.scss');
+@import './variables.scss';
+
+*,
+*::before,
+*::after {
+  font-family: 'Involve', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+body {
+  min-width: 320px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  overflow-x: hidden;
+  background: #f0f0f0;
+  background: #000;
+}
+
+.app {
+  // display: flex;
+  // flex-direction: column;
+  // height: 100%;
+  // background: #000;
+}
+
+#root {
+  width: 100%;
+}
+
+main {
+  min-height: 100vh;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+input {
+  outline: none;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:hover {
+    -webkit-text-fill-color: gray !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+textarea,
+button,
+a,
+svg,
+svg path,
+svg stroke {
+  transition: all 0.3s;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-color);
+  border-radius: 10px;
+}
+
+svg {
+  fill: var(--icon-collor);
+}
+
+.show-anim {
+  animation: show 0.5s;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

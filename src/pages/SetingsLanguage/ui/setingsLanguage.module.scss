@@ -1,0 +1,16 @@
+.language {
+  height: 100%;
+  & + .container {
+    height: 100%;
+  }
+  &__container {
+    height: 100%;
+    background: var(--main-color);
+    border-radius: 20px;
+    padding: 20px;
+  }
+}
+
+.container {
+  height: 100%;
+}

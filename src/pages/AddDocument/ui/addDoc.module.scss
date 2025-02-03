@@ -1,0 +1,29 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 60px;
+}
+
+.wrapper {
+  height: 560px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.punkts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px;
+  height: 100%;
+}

@@ -1,0 +1,36 @@
+.add__button {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.people {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.container {
+  height: 100%;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: var(--second-color);
+}
+
+.sercle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  margin: 15px 0 20px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--second-color);
+}

@@ -1,0 +1,51 @@
+.radio__button {
+  position: relative;
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #eeeeee;
+  transition: all 0.3s;
+  &::before {
+    animation: show 2s;
+    content: '';
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  input {
+    display: none;
+    &:checked + .radio__button::after {
+      content: '';
+      position: relative;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation: show 0.3s;
+
+      background-image: url('./Chekcmark.svg');
+      background-size: contain;
+    }
+  }
+}
+.label__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  color: var(--dark-text-color);
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

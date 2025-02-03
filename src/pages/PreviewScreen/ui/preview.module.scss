@@ -1,0 +1,23 @@
+.preview {
+  &__container {
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.sub_title {
+  font-family: 'RAYDIS';
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  text-align: center;
+  margin-top: 8px;
+  color: var(--dark-text-color);
+}
+
+.button {
+  margin-top: 172px;
+  width: 310px;
+}

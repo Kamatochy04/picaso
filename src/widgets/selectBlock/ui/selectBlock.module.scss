@@ -1,0 +1,58 @@
+.container {
+  padding: 0 20px;
+  border-radius: 20px;
+  background: #f5f5f5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.sercle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active {
+  background: #05f;
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 286%;
+    color: #fff;
+  }
+}
+
+.label {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 286%;
+  color: rgba(16, 16, 16, 0.5);
+}
+
+.mark {
+  width: 5px;
+  height: 9px;
+  border-top: 2px solid #05f;
+  border-left: 2px solid #05f;
+  transform: rotate(225deg);
+
+  animation: show 0.3s;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

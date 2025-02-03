@@ -1,0 +1,39 @@
+.header {
+  &__container {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    align-items: center;
+    gap: 20px;
+
+    background: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  &__arrow {
+    transform: rotate(180deg);
+  }
+  img {
+    width: 40px;
+    aspect-ratio: 1;
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+  color: var(--dark-text-color);
+}
+
+.text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: rgba(16, 16, 16, 0.25);
+}

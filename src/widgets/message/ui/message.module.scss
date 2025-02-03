@@ -1,0 +1,24 @@
+.message {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 143%;
+  color: var(--main-color);
+  padding: 10px 20px;
+  width: auto;
+  max-width: 290px;
+  display: inline-block;
+}
+
+.you {
+  background: #101010;
+  margin-left: auto;
+
+  border-radius: 20px 20px 5px 20px;
+}
+
+.he {
+  margin-right: auto;
+
+  border-radius: 20px 20px 20px 5px;
+  background: rgba(16, 16, 16, 0.5);
+}
