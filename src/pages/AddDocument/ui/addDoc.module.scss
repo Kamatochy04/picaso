@@ -3,10 +3,13 @@
   flex-direction: column;
   gap: 10px;
   padding-top: 60px;
+  height: 100vh;
+  padding: 20px 0px;
 }
 
 .wrapper {
-  height: 560px;
+  height: 600px;
+  // flex-grow: 1;
 }
 
 .content {
@@ -26,4 +29,10 @@
   gap: 5px;
   padding: 20px;
   height: 100%;
+}
+
+@media (max-width: 440px) {
+  .wrapper {
+    flex-grow: 1;
+  }
 }
