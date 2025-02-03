@@ -13,6 +13,7 @@
 
     grid-template-columns: 30px 1fr 20px;
     position: relative;
+    overflow: hidden;
     &::after {
       content: '';
       position: absolute;
