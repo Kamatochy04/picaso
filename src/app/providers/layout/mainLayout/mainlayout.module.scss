@@ -13,7 +13,7 @@
   flex-direction: column;
   gap: 10px;
 
-  height: 100vh;
+  height: 842px;
 }
 
 .sercle {
@@ -40,7 +40,6 @@
 }
 
 .content {
-  padding: 10px 0;
   flex-grow: 1;
   overflow-y: scroll;
 }
@@ -93,5 +92,11 @@
     img {
       filter: invert(1);
     }
+  }
+}
+
+@media (max-width: 450px) {
+  .app {
+    height: 100vh;
   }
 }
