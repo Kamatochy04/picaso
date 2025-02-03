@@ -7,22 +7,43 @@
   justify-content: flex-end;
   gap: 5px;
   padding: 20px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 5px; // Ширина скроллбара
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #88888834; // Цвет ползунка
+    border-radius: 10px; // Радиус скругления углов
+    border: 3px solid #5555554c; // Внутренний отступ
+    background: #000;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f100; // Цвет трека
+    border-radius: 10px; // Радиус скругления углов
+    background: #00000000;
+  }
 }
 
 .chat {
   padding-top: 60px;
   padding-bottom: 20px;
-  height: 100vh;
+  height: 840px;
 
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  // overflow-y: scroll;
 }
 
 .wrapper {
   flex-grow: 1;
   width: 100%;
   height: 100px;
+  // overflow-y: scroll;
 }
 
 .block {
@@ -46,4 +67,10 @@
 .list {
   margin-top: 30px;
   transition: all 1s;
+}
+
+@media (max-width: 440px) {
+  .chat {
+    height: 100vh;
+  }
 }
