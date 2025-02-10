@@ -14,9 +14,9 @@ export const PhoneStep = () => {
     <form className={form.form}>
       <div className={form.phone__label}>номер телефона</div>
       <div className={form.phone__container}>
-        <div className={form.phone__sercle}>
+        {/* <div className={form.phone__sercle}>
           <img src={country} alt="" />
-        </div>
+        </div> */}
         <Input />
       </div>
 
