@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 import { Input } from '@/shared/component';
 
@@ -6,8 +6,17 @@ import styles from './mainlayout.module.scss';
 
 import docks from '@shared/icons/Briefcase.svg';
 import setings from '@shared/icons/Gear.svg';
+import { useEffect } from 'react';
 
 export const MainLayout = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      navigate('/previe');
+    }
+  }, []);
   return (
     <div className={`${styles.app} show-anim `}>
       <header className={styles.header}>

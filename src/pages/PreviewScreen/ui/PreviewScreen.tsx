@@ -17,7 +17,7 @@ export const PreviewScreen = () => {
             <Button
               variant="main"
               className={styles.button}
-              onClick={() => navigate('./register')}
+              onClick={() => navigate('/register')}
             >
               Начать
             </Button>
