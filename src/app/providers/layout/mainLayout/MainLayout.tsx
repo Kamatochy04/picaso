@@ -50,7 +50,7 @@ export const MainLayout = () => {
               className={({ isActive }) =>
                 `${isActive ? styles.footer__item_active : ''} ${styles.footer__item}`
               }
-              to={'/main'}
+              to={'/'}
             >
               <div className={styles.footer__sercle}></div>
               <p className={styles.footer__text}>Диалоги</p>

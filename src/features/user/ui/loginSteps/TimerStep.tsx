@@ -13,7 +13,7 @@ export const TimerStep = () => {
       }, 1000);
       return () => clearInterval(timer);
     } else {
-      navigate('/main');
+      navigate('/');
     }
   }, [seconds]);
 

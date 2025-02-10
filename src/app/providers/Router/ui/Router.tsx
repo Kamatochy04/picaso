@@ -17,10 +17,10 @@ export const Router = () => {
   return (
     <div>
       <Routes>
-        <Route index element={<PreviewScreen />} />
+        <Route path="/previe" element={<PreviewScreen />} />
         <Route path="/register" element={<RegisterStepper />} />
         <Route path="/login" element={<LoginStepper />} />
-        <Route path="/main" element={<MainLayout />}>
+        <Route path="/" element={<MainLayout />}>
           <Route index element={<FirstScrean />} />
           <Route path="setings" element={<Setings />} />
           <Route path="setings/language" element={<SetingsLanguage />} />
