@@ -13,7 +13,7 @@ export const MainLayout = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
 
-    if (token) {
+    if (!token) {
       navigate('/previe');
     }
   }, []);

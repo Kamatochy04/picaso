@@ -6,9 +6,7 @@ export const TimerStep = () => {
   const [seconds, setSeconds] = useState(5);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    localStorage.setItem('token', 'asdasd');
-  }, []);
+  localStorage.setItem('token', 'asdasd');
 
   useEffect(() => {
     if (seconds > 0) {
