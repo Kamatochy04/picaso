@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Input } from '@/shared/component';
 
 import { NavButtons } from '@/widgets';
-import country from '@/shared/img/country/img_1.png';
+// import country from '@/shared/img/country/img_1.png';
 import { RegisterContext } from '../RegisterStepper';
 
 import form from '../styles/form.module.scss';
