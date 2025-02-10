@@ -12,6 +12,7 @@ import { TimerStep } from './registerSteps/TimerStep';
 
 import styles from './register.module.scss';
 import { useNavigate } from 'react-router-dom';
+import { DocumentStep } from './registerSteps/DocumentData';
 
 const registerSteps = [
   <FirstStep />,
@@ -19,6 +20,7 @@ const registerSteps = [
   <PhoneStep />,
   <CodeStep />,
   <UserInfoStep />,
+  <DocumentStep />,
   <PhotoStep />,
   <TimerStep />,
 ];
@@ -55,13 +57,13 @@ export const RegisterStepper = () => {
 
           <div className={styles.register__container}>
             <h3 className={styles.title}>
-              {step === 6 ? 'Регистрация подтверждена' : 'Регистрация'}
+              {step === 7 ? 'Регистрация подтверждена' : 'Регистрация'}
             </h3>
-            {step === 6 ? null : <p className={styles.text}>{registerStepsText[step]}</p>}
+            {step === 7 ? null : <p className={styles.text}>{registerStepsText[step]}</p>}
             {registerSteps[step]}
-            {step === 6 ? null : (
+            {step === 7 ? null : (
               <p className={styles.register__footer}>
-                если зарегистрированы,{' '}
+                если зарегистрированы,
                 <span onClick={() => navigate('/login')}>нажмите здесь</span>
               </p>
             )}

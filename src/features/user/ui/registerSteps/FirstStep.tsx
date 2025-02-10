@@ -24,11 +24,20 @@ export const FirstStep = () => {
           onChange={handleRadioChange}
         />
         <RadioButton
-          label="Юридическое лицо"
+          isBlockd={true}
+          label="Предприниматель"
           value="legal"
           checked={selectedValue === 'legal'}
           className={selectedValue !== 'legal' ? form.not_active : ''}
-          onChange={handleRadioChange}
+          // onChange={handleRadioChange}
+        />
+        <RadioButton
+          isBlockd={true}
+          label="Юридическое лицо"
+          value="er"
+          checked={selectedValue === 'er'}
+          className={selectedValue !== 'legal' ? form.not_active : ''}
+          // onChange={handleRadioChange}
         />
       </div>
 

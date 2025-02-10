@@ -24,32 +24,6 @@ export const Chatlayout = () => {
           <Message sender={'he'} text={'Доброе утро!'} />
           <Message sender={'you'} text={'Вы продаете автомобиль?'} />
           <Message sender={'he'} text={'Я не понимаю о чём вы'} />
-          <Message sender={'he'} text={'Вы писали мне в «Telegram»'} />
-          <Message sender={'you'} text={'Не притворяйтесь'} />
-          <Message sender={'you'} text={'Привет'} />
-          <Message sender={'he'} text={'Доброе утро!'} />
-          <Message sender={'you'} text={'Вы продаете автомобиль?'} />
-          <Message sender={'he'} text={'Я не понимаю о чём вы'} />
-          <Message sender={'he'} text={'Вы писали мне в «Telegram»'} />
-          <Message sender={'you'} text={'Не притворяйтесь'} />
-          <Message sender={'you'} text={'Привет'} />
-          <Message sender={'he'} text={'Доброе утро!'} />
-          <Message sender={'you'} text={'Вы продаете автомобиль?'} />
-          <Message sender={'he'} text={'Я не понимаю о чём вы'} />
-          <Message sender={'he'} text={'Вы писали мне в «Telegram»'} />
-          <Message sender={'you'} text={'Не притворяйтесь'} />
-          <Message sender={'you'} text={'Привет'} />
-          <Message sender={'he'} text={'Доброе утро!'} />
-          <Message sender={'you'} text={'Вы продаете автомобиль?'} />
-          <Message sender={'he'} text={'Я не понимаю о чём вы'} />
-          <Message sender={'he'} text={'Вы писали мне в «Telegram»'} />
-          <Message sender={'you'} text={'Не притворяйтесь'} />
-          <Message sender={'you'} text={'Привет'} />
-          <Message sender={'he'} text={'Доброе утро!'} />
-          <Message sender={'you'} text={'Вы продаете автомобиль?'} />
-          <Message sender={'he'} text={'Я не понимаю о чём вы'} />
-          <Message sender={'he'} text={'Вы писали мне в «Telegram»'} />
-          <Message sender={'you'} text={'Не притворяйтесь'} />
 
           <DocumentMessage userName="Иван И. " />
         </div>

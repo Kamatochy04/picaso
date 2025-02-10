@@ -22,7 +22,7 @@ export const DocumentModel: FC<DocumentModelType> = ({
 
   return (
     <Modal>
-      <div className="container">
+      <div className="container h_100">
         <div className={styles.doc}>
           <div className={styles.icon} onClick={onClouseModel}>
             <ClouseIcon />

@@ -1,11 +1,11 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { Button } from '@/shared/component';
 
 import form from '../styles/form.module.scss';
-import { useNavigate } from 'react-router-dom';
+import { LoginContext } from '../LoginStepper';
 
 export const CodeStep = () => {
-  const navigate = useNavigate();
+  const context = useContext(LoginContext);
 
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
@@ -38,7 +38,7 @@ export const CodeStep = () => {
       <Button
         variant="main"
         className={form.form__button}
-        onClick={() => navigate('/main')}
+        onClick={() => context?.toSetStep(2)}
       >
         Подтвердить
       </Button>

@@ -7,9 +7,9 @@
   top: 0; /* Измените значения по вашему усмотрению */
   left: 0; /* Измените значения по вашему усмотрению */
   border: 1px solid #ccc;
-  padding-top: 110px;
   z-index: 100;
 
   display: flex;
   justify-content: center;
+  justify-content: space-between;
 }

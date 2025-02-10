@@ -7,8 +7,8 @@
 }
 
 .app {
-  padding-top: 60px;
-  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -96,6 +96,12 @@
 }
 
 @media (max-width: 450px) {
+  .app {
+    height: 100vh;
+  }
+}
+
+@media (max-height: 842px) {
   .app {
     height: 100vh;
   }

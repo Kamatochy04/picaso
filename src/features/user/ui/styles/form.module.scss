@@ -48,7 +48,7 @@
 }
 
 .input__sercle {
-  width: 70px;
+  width: 100%;
   height: 40px;
   background: #f5f5f5;
   border-radius: 20px;
@@ -62,8 +62,9 @@
 
 .number {
   &__container {
-    display: flex;
+    display: grid;
     align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
   }
 }

@@ -35,14 +35,16 @@ export const LoginStepper = () => {
 
           <div className={styles.register__container}>
             <h3 className={styles.title}>Авторизация</h3>
-            <p className={styles.text}>{loginStepsText[step]}</p>
+            {step === 2 ? null : <p className={styles.text}>{loginStepsText[step]}</p>}
 
             {loginSteps[step]}
 
-            <p className={styles.register__footer}>
-              если вы не зарегистрированы,{' '}
-              <span onClick={() => navigate('/register')}>нажмите здесь</span>
-            </p>
+            {step == 2 ? null : (
+              <p className={styles.register__footer}>
+                если вы не зарегистрированы,{' '}
+                <span onClick={() => navigate('/register')}>нажмите здесь</span>
+              </p>
+            )}
           </div>
         </div>
       </div>

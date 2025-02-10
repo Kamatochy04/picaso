@@ -17,6 +17,13 @@
   align-items: center;
   gap: 15px;
   cursor: pointer;
+  &[data-block='true'] {
+    cursor: not-allowed;
+    opacity: 0.5;
+    & .label__text {
+      pointer-events: none;
+    }
+  }
   input {
     display: none;
     &:checked + .radio__button::after {
