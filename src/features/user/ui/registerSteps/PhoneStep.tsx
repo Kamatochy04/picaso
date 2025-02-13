@@ -1,25 +1,30 @@
-import { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Input } from '@/shared/component';
-
 import { NavButtons } from '@/widgets';
-// import country from '@/shared/img/country/img_1.png';
 import { RegisterContext } from '../RegisterStepper';
-
 import form from '../styles/form.module.scss';
 
-export const PhoneStep = () => {
+export const PhoneStep: React.FC = () => {
   const context = useContext(RegisterContext);
+  const [phoneNumber, setPhoneNumber] = useState('+');
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const isValid = /^\+\d*$/.test(value);
+    if (isValid) {
+      setPhoneNumber(value);
+    }
+  };
 
   return (
     <form className={form.form}>
-      <div className={form.phone__label}>номер телефона</div>
-      {/* <div className={form.phone__container}> */}
-      {/* <div className={form.phone__sercle}>
-          <img src={country} alt="" />
-        </div> */}
-      {/* </div> */}
-      <Input />
-
+      <div className={form.phone__label}>Номер телефона</div>
+      <Input
+        type="tel"
+        value={phoneNumber}
+        onChange={handleInputChange}
+        defaultValue="+"
+      />
       <NavButtons
         backButtonClick={() => context?.toSetStep(1)}
         nextButtonClick={() => context?.toSetStep(3)}

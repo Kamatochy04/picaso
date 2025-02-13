@@ -21,7 +21,7 @@ export const CodeStep = () => {
 
   return (
     <form className={form.form}>
-      <div className={form.phone__label}>код подтверждения</div>
+      <div className={form.phone__label}>Код подтверждения</div>
       <div className={form.number__container}>
         {[...Array(4)].map((_, index) => (
           <input

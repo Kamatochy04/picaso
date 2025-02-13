@@ -74,6 +74,9 @@ input {
   }
 }
 
+label {
+}
+
 button {
   border: none;
   background: transparent;
@@ -101,7 +104,8 @@ svg stroke {
   transition: all 0.3s;
 }
 
-p {
+p,
+label {
   margin: 0;
   padding: 0;
 }

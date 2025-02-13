@@ -10,7 +10,7 @@ export const PhotoStep = () => {
 
   return (
     <form className={form.form}>
-      <p className={form.phone__label}>фотография вашего паспорта</p>
+      <p className={form.phone__label}>Фотография вашего паспорта</p>
       <button className={form.pasport__button}>сфотографировать</button>
 
       <NavButtons

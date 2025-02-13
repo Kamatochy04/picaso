@@ -3,14 +3,14 @@ import { Input } from '@/shared/component';
 
 import styles from './chat.module.scss';
 
-import clip from '@shared/icons/Clip (2).svg';
 import ArrowLineUp from '@shared/icons/ArrowLineUp.svg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ClipIcon } from '@/shared/icons/ClipIcon';
 
 export const Chatlayout = () => {
-  const [showSetings, setShowSetings] = useState(false);
-
+  const [showSetings, setShowSetings] = useState(true);
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   return (
@@ -30,14 +30,17 @@ export const Chatlayout = () => {
       </div>
       <div className="container">
         <Block>
-          <div className={styles.block}>
-            <Input />
-            <div
-              className={styles.sercle}
-              onClick={() => setShowSetings((prev) => !prev)}
-            >
-              <img src={clip} alt="clip" />
-            </div>
+          <div className={`${message ? styles.block_active : ''} ${styles.block}`}>
+            <Input value={message} onChange={(event) => setMessage(event.target.value)} />
+            {message ? null : (
+              <div
+                className={`${showSetings ? styles.active : ''} ${styles.sercle}`}
+                onClick={() => setShowSetings((prev) => !prev)}
+              >
+                <ClipIcon />
+              </div>
+            )}
+
             <div className={styles.sercle}>
               <img src={ArrowLineUp} alt="ArrowLineUp" />
             </div>

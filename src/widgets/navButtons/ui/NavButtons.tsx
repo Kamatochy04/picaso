@@ -9,12 +9,14 @@ type NavButtonsTypes = {
   nextButtonClick: () => void;
   backButtonClick?: () => void;
   className?: string;
+  buttonText?: string;
 };
 
 export const NavButtons: FC<NavButtonsTypes> = ({
   backButtonClick,
   nextButtonClick,
   className,
+  buttonText = 'Подтвердить',
 }) => {
   const navigate = useNavigate();
 
@@ -32,7 +34,7 @@ export const NavButtons: FC<NavButtonsTypes> = ({
         <ArrowIcon />
       </button>
       <Button variant="main" onClick={nextButtonClick} className={styles.button}>
-        Подтвердить
+        {buttonText}
       </Button>
     </div>
   );

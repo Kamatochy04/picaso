@@ -4,7 +4,7 @@ export { UserItem } from './userItem/index';
 export { Message } from './message/index';
 export { DocumentMessage } from './documentMessage/index';
 export { NavButtons } from './navButtons/index';
-export { Calendar } from './datePicker/index';
+export { Calendar } from './calendar/index';
 export { Modal } from './modal/index';
 export { DocumentModel } from './document/index';
 export { UserHeader } from './userHeader/index';

@@ -25,16 +25,8 @@ export const Money = () => {
             ]}
             onSelect={() => {}}
           />
-          <Dropdown
-            label="Номер счёта"
-            options={[{ value: 'Российский рубль', label: '12345678901234567890' }]}
-            onSelect={() => {}}
-          />
-          <Dropdown
-            label="Собственник счёта"
-            options={[{ value: 'Российский рубль', label: 'Иван И.' }]}
-            onSelect={() => {}}
-          />
+          <Input label="Номер счёта" />
+          <Input label="Собственник счёта" />
         </Block>
       </div>
 

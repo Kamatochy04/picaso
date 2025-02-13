@@ -11,9 +11,15 @@ interface CustomSelectProps {
   label?: string;
   options: Option[];
   onSelect: (value: string) => void;
+  onClick?: () => void;
 }
 
-export const Dropdown: React.FC<CustomSelectProps> = ({ label, options, onSelect }) => {
+export const Dropdown: React.FC<CustomSelectProps> = ({
+  onClick,
+  label,
+  options,
+  onSelect,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
 
@@ -23,10 +29,16 @@ export const Dropdown: React.FC<CustomSelectProps> = ({ label, options, onSelect
     setIsOpen(false);
   };
 
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <div>
       <label>{label}</label>
-      <div className={styles.custom_select}>
+      <div className={styles.custom_select} onClick={() => handleClick()}>
         <div className={styles.select_box} onClick={() => setIsOpen(!isOpen)}>
           <div className={styles.selected_value}>
             {selectedOption ? selectedOption.label : ''}

@@ -1,0 +1,142 @@
+.title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: #101010;
+}
+
+.date {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.year {
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
+  gap: 10px;
+  padding: 0 !important;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.month {
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.dey {
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.descr {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: rgba(16, 16, 16, 0.5);
+  margin-top: 10px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  &__title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 110%;
+    color: rgba(16, 16, 16, 0.25);
+  }
+  &__dey {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 250%;
+    text-align: center;
+    color: #101010;
+
+    background: #f0f0f0;
+
+    border-radius: 20px;
+    width: 100%;
+    min-width: 60px;
+    height: 40px;
+
+    cursor: pointer;
+    padding: 0 15px;
+  }
+  &__month {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 250%;
+    text-align: center;
+    color: #101010;
+
+    background: #f0f0f0;
+
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+
+    padding: 0 33px;
+    cursor: pointer;
+  }
+
+  &__year {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 250%;
+    text-align: center;
+    color: #101010;
+
+    background: #f0f0f0;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    padding: 0 27px;
+  }
+}
+
+.footer__text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+  text-align: center;
+  color: rgba(16, 16, 16, 0.5);
+
+  margin-top: 20px;
+  padding-bottom: 10px;
+  span {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: rgba(0, 85, 255, 0.75);
+  }
+}
+
+.buttons {
+  margin-top: 40px;
+}
+
+.active {
+  background: #000;
+  color: #fff;
+}

@@ -22,7 +22,11 @@ export const MainLayout = () => {
       <header className={styles.header}>
         <div className="container">
           <div className={styles.header__container}>
-            <Input className={styles.input} placeholder="найти по словам " />
+            <Input
+              className={styles.input}
+              placeholder="найти по словам "
+              isSearch={true}
+            />
 
             <div className={styles.sercle}>
               <img src={docks} alt="docks" />

@@ -5,7 +5,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 222%;
-  padding: 0 15px;
+  padding: 0 20px;
   height: 40px;
 }
 
@@ -31,4 +31,15 @@
   top: 50%;
   right: 20px;
   transform: translateY(-20%);
+}
+
+.serch__icon {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  & + input {
+    padding-left: 40px;
+  }
 }

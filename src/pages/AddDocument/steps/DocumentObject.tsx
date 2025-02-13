@@ -2,10 +2,12 @@ import { Dropdown, Input } from '@/shared/component';
 import { Block, NavButtons } from '@/widgets';
 
 import styles from '../ui/addDoc.module.scss';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { DocumentContext } from '../ui/AddDocument';
 
 export const DocumentObject = () => {
+  const [text, setText] = useState('1ABCD23EFGH456789');
+
   const context = useContext(DocumentContext);
 
   return (
@@ -20,8 +22,8 @@ export const DocumentObject = () => {
 
           <Input
             label="VIN-код (идентификационный номер)"
-            value="1ABCD23EFGH456789"
-            disabled
+            value={text}
+            onChange={(event) => setText(event.target.value)}
           />
           <Input
             label="Марка движимого имущества"

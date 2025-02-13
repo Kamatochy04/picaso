@@ -17,7 +17,7 @@ export const Setings = () => {
           <div className={styles.inf}>
             <p className={styles.name}>Иван И.</p>
             <p className={styles.number}>+968 12345678</p>
-            <p className={styles.text}>основатель проекта</p>
+            <p className={styles.text}>Персональная страница</p>
           </div>
           <div className={styles.back}>
             <img src={exportIcon} alt="export" />
@@ -36,24 +36,6 @@ export const Setings = () => {
           <ListItem text={'Настройки чата'} isBlocked />
         </Block>
       </div>
-
-      {/* <div className="container">
-        <Block>
-          <ListItem text={'Мои файлы'} isBorder isBlocked />
-          <ListItem text={'Мои документы'} />
-        </Block>
-      </div>
-      <div className="container">
-        <Block>
-          <ListItem text={'Русский язык'} onClick={() => navigate('language')} />
-        </Block>
-      </div>
-      <div className="container">
-        <Block>
-          <ListItem text={'Настройки сервиса'} isBlocked isBorder />
-          <ListItem text={'Настройки чата'} isBlocked />
-        </Block>
-      </div> */}
     </div>
   );
 };

@@ -12,7 +12,6 @@ import {
 } from '@/pages';
 import { MainLayout } from '../../layout/mainLayout/MainLayout';
 import { Chatlayout } from '../../layout/chatLayout/ChatLayout';
-
 export const Router = () => {
   return (
     <div>

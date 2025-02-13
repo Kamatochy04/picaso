@@ -64,7 +64,7 @@ export const RegisterStepper = () => {
             {registerSteps[step]}
             {step === 7 ? null : (
               <p className={styles.register__footer}>
-                если зарегистрированы,
+                если зарегистрированы,{' '}
                 <span onClick={() => navigate('/login')}>нажмите здесь</span>
               </p>
             )}

@@ -88,6 +88,13 @@
   margin-top: 2px;
 }
 
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .input_full {
   & input {
     width: 100%;
