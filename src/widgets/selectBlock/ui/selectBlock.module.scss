@@ -19,6 +19,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  svg {
+    height: 10px;
+    width: 10px;
+    path {
+      // color: red !important;
+      fill: #05f !important;
+    }
+  }
 }
 
 .active {

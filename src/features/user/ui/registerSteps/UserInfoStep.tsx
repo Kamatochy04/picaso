@@ -6,19 +6,32 @@ import { RegisterContext } from '../RegisterStepper';
 import form from '../styles/form.module.scss';
 import { Calendar, Modal, NavButtons } from '@/widgets';
 import { ClouseIcon } from '@/shared/icons/ClouseIcon';
+import { ArrowIcon } from '@/shared/icons/ArrowIcon';
 
 export const UserInfoStep = () => {
-  const context = useContext(RegisterContext);
+  const [_, setSelectedDate] = useState<{
+    year: number | null;
+    month: number | null;
+    day: number | null;
+  }>({
+    year: null,
+    month: null,
+    day: null,
+  });
   const [active, setActive] = useState(false);
+
+  const context = useContext(RegisterContext);
   return (
     <>
       {active ? (
         <Modal>
-          <div className="container">
-            <div className={form.icon} onClick={() => setActive(false)}>
-              <ClouseIcon />
+          <div className={form.calendar__wrapper}>
+            <div className="container ">
+              <div className={form.icon} onClick={() => setActive(false)}>
+                <ClouseIcon />
+              </div>
+              <Calendar setIsActive={() => setActive(false)} setDate={setSelectedDate} />
             </div>
-            <Calendar />
           </div>
         </Modal>
       ) : null}
@@ -26,15 +39,15 @@ export const UserInfoStep = () => {
         <div className={form.list}>
           <Input label="Имя" />
           <Input label="Фамилия" />
-          <Dropdown
-            label={'Дата рождения'}
-            onClick={() => {
-              console.log('sdfds');
-              setActive((prev) => !prev);
-            }}
-            options={[]}
-            onSelect={() => {}}
-          />
+          <div className={form.date_container}>
+            <div className={form.date_label}>Дата рождения</div>
+            <div className={form.date} onClick={() => setActive((prev) => !prev)}>
+              <div className={`${form.icon} ${active ? form.rotate : ''}`}>
+                <ArrowIcon />
+              </div>
+            </div>
+          </div>
+
           <Dropdown
             label={'Пол'}
             onSelect={() => {}}

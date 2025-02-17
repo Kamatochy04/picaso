@@ -3,11 +3,16 @@ import user from '@shared/img/Preview.png';
 
 import styles from './userHeader.module.scss';
 import { useNavigate } from 'react-router-dom';
+import { FC } from 'react';
 
-export const UserHeader = () => {
+type HeaderProps = {
+  className?: string;
+};
+
+export const UserHeader: FC<HeaderProps> = ({ className }) => {
   const navigate = useNavigate();
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header} ${className}`}>
       <div className={styles.header__container}>
         <img
           src={arrow}

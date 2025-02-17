@@ -15,47 +15,56 @@ export const Chatlayout = () => {
 
   return (
     <div className={styles.chat}>
-      <div className="container">
-        <UserHeader />
-      </div>
-      <div className={`container ${styles.wrapper}`}>
-        <div className={styles.content}>
-          <Message sender={'you'} text={'Привет'} />
-          <Message sender={'he'} text={'Доброе утро!'} />
-          <Message sender={'you'} text={'Вы продаете автомобиль?'} />
-          <Message sender={'he'} text={'Я не понимаю о чём вы'} />
-
-          <DocumentMessage userName="Иван И. " />
+      <div className={styles.header}>
+        <div className="container">
+          <UserHeader className={styles.chat__header} />
         </div>
       </div>
-      <div className="container">
-        <Block>
-          <div className={`${message ? styles.block_active : ''} ${styles.block}`}>
-            <Input value={message} onChange={(event) => setMessage(event.target.value)} />
-            {message ? null : (
-              <div
-                className={`${showSetings ? styles.active : ''} ${styles.sercle}`}
-                onClick={() => setShowSetings((prev) => !prev)}
-              >
-                <ClipIcon />
-              </div>
-            )}
+      <div className={styles.wrapper}>
+        <div className={`container ${styles.height}`}>
+          <div className={styles.content}>
+            <Message sender={'you'} text={'Привет'} />
+            <Message sender={'he'} text={'Доброе утро!'} />
+            <Message sender={'you'} text={'Вы продаете автомобиль?'} />
+            <Message sender={'he'} text={'Я не понимаю о чём вы'} />
 
-            <div className={styles.sercle}>
-              <img src={ArrowLineUp} alt="ArrowLineUp" />
-            </div>
+            <DocumentMessage userName="Иван И. " />
           </div>
-          {showSetings ? (
-            <div className={`${styles.list} `}>
-              <ListItem
-                className="show"
-                text={'Добавить документ'}
-                onClick={() => navigate('/add-document')}
+        </div>
+      </div>
+      <div className={styles.footer}>
+        <div className={styles.footer__container}>
+          <Block>
+            <div className={`${message ? styles.block_active : ''} ${styles.block}`}>
+              <Input
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
               />
-              <ListItem text={'Разработать документ'} isBlocked />
+              {message ? null : (
+                <div
+                  className={`${showSetings ? styles.active : ''} ${styles.sercle}`}
+                  onClick={() => setShowSetings((prev) => !prev)}
+                >
+                  <ClipIcon />
+                </div>
+              )}
+
+              <div className={styles.sercle}>
+                <img src={ArrowLineUp} alt="ArrowLineUp" />
+              </div>
             </div>
-          ) : null}
-        </Block>
+            {showSetings ? (
+              <div className={`${styles.list} `}>
+                <ListItem
+                  className="show"
+                  text={'Добавить документ'}
+                  onClick={() => navigate('/add-document')}
+                />
+                <ListItem text={'Разработать документ'} isBlocked />
+              </div>
+            ) : null}
+          </Block>
+        </div>
       </div>
     </div>
   );

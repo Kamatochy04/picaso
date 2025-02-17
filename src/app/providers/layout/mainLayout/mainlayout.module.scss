@@ -1,4 +1,7 @@
 .header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
   &__container {
     display: flex;
     align-items: center;
@@ -13,7 +16,7 @@
   flex-direction: column;
   gap: 10px;
 
-  height: 842px;
+  height: 100vh;
 }
 
 .sercle {
@@ -26,6 +29,15 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  padding: 5px;
+  svg {
+    height: 50%;
+    width: 50%;
+    path {
+      height: 50%;
+      width: 50%;
+    }
+  }
   img {
     width: 20px;
     height: 20px;
@@ -42,9 +54,14 @@
 .content {
   flex-grow: 1;
   overflow-y: scroll;
+  padding-top: 56px;
+  padding-bottom: 93px;
 }
 
 .footer {
+  position: fixed;
+  width: 100%;
+  bottom: 10px;
   &__container {
     background: var(--main-color);
     padding: 15px 35px;

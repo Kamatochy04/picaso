@@ -1,6 +1,9 @@
 import { FC, useState } from 'react';
 import styles from './selectBlock.module.scss';
 
+// import checkimg from '../../../shared/icons/check.svg';
+import { CheckIcon } from '@/shared/icons/CheckIcon';
+
 type TSelectBlock = {
   text: string;
   selected?: boolean;
@@ -16,9 +19,9 @@ export const SelectBlock: FC<TSelectBlock> = ({ text }) => {
     >
       <p className={styles.label}>{text}</p>
 
-      <div className={styles.sercle}>
-        {selected ? <div className={styles.mark}></div> : null}
-      </div>
+      <div className={styles.sercle}>{selected ? <CheckIcon /> : null}</div>
     </div>
   );
 };
+
+//<div className={styles.mark}></div>

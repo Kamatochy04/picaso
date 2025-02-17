@@ -3,6 +3,7 @@
   font-size: 20px;
   line-height: 100%;
   color: #101010;
+  padding: 10px 20px 0 20px;
 }
 
 .date {
@@ -21,6 +22,10 @@
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.container {
+  padding: 0;
 }
 
 .month {
@@ -46,6 +51,7 @@
 }
 
 .descr {
+  padding: 0 20px 0 20px;
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
@@ -63,6 +69,7 @@
     font-size: 14px;
     line-height: 110%;
     color: rgba(16, 16, 16, 0.25);
+    padding: 0 20px;
   }
   &__dey {
     font-weight: 400;
@@ -125,6 +132,7 @@
 
   margin-top: 20px;
   padding-bottom: 10px;
+  padding: 0 20px 10px 20px;
   span {
     text-decoration: underline;
     text-decoration-skip-ink: none;
@@ -134,6 +142,7 @@
 
 .buttons {
   margin-top: 40px;
+  padding: 0 20px;
 }
 
 .active {
