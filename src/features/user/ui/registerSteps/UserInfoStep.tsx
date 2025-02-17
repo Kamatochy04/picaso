@@ -7,6 +7,7 @@ import form from '../styles/form.module.scss';
 import { Calendar, Modal, NavButtons } from '@/widgets';
 import { ClouseIcon } from '@/shared/icons/ClouseIcon';
 import { ArrowIcon } from '@/shared/icons/ArrowIcon';
+import { styleText } from 'util';
 
 export const UserInfoStep = () => {
   const [_, setSelectedDate] = useState<{

@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { ClipIcon } from '@/shared/icons/ClipIcon';
 
 export const Chatlayout = () => {
-  const [showSetings, setShowSetings] = useState(true);
+  const [showSetings, setShowSetings] = useState(false);
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
