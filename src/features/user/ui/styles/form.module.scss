@@ -24,6 +24,10 @@
 }
 
 .not_active {
+  span {
+    background: #f0f0f0;
+    border: none;
+  }
   p {
     color: #eee;
   }
