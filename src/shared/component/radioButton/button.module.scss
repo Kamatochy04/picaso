@@ -1,10 +1,11 @@
 .radio__button {
   position: relative;
   display: block;
-  width: 26px;
-  height: 26px;
+  width: 23px;
+  height: 23px;
   border-radius: 50%;
-  background: #eeeeee;
+  // background: #eeeeee;
+  border: 1px solid #000;
   transition: all 0.3s;
   &::before {
     animation: show 2s;
@@ -32,8 +33,8 @@
       display: block;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
+      width: 106%;
+      height: 106%;
       animation: show 0.3s;
 
       background-image: url('./Chekcmark.svg');
@@ -43,7 +44,7 @@
 }
 .label__text {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 100%;
   color: var(--dark-text-color);
 }

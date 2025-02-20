@@ -13,41 +13,49 @@
   gap: 15px;
 }
 
-.year {
+.year,
+.month,
+.day {
   display: flex;
   overflow-x: scroll;
   align-items: center;
   gap: 10px;
   padding: 0 !important;
+  scroll-snap-type: x mandatory; /* Примагничивание по горизонтали */
   &::-webkit-scrollbar {
     display: none;
   }
+}
+
+.wrapper__year,
+.wrapper__month,
+.wrapper__day {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 250%;
+  text-align: center;
+  color: #101010;
+  background: #f0f0f0;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 0 27px;
+  scroll-snap-align: center; /* Примагничивание к центру */
+}
+
+.wrapper__day {
+  min-width: 60px;
+  height: 40px;
+  padding: 0 15px;
+}
+
+.wrapper__month {
+  width: 100px;
+  height: 40px;
+  padding: 0 33px;
 }
 
 .container {
   padding: 0;
-}
-
-.month {
-  display: flex;
-  overflow-x: scroll;
-  align-items: center;
-  gap: 10px;
-  padding: 0;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-.dey {
-  display: flex;
-  overflow-x: scroll;
-  align-items: center;
-  gap: 10px;
-  padding: 0;
-  &::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 .descr {
@@ -71,55 +79,6 @@
     color: rgba(16, 16, 16, 0.25);
     padding: 0 20px;
   }
-  &__dey {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 250%;
-    text-align: center;
-    color: #101010;
-
-    background: #f0f0f0;
-
-    border-radius: 20px;
-    width: 100%;
-    min-width: 60px;
-    height: 40px;
-
-    cursor: pointer;
-    padding: 0 15px;
-  }
-  &__month {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 250%;
-    text-align: center;
-    color: #101010;
-
-    background: #f0f0f0;
-
-    border-radius: 20px;
-    width: 100px;
-    height: 40px;
-
-    padding: 0 33px;
-    cursor: pointer;
-  }
-
-  &__year {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 250%;
-    text-align: center;
-    color: #101010;
-
-    background: #f0f0f0;
-
-    border-radius: 20px;
-
-    cursor: pointer;
-
-    padding: 0 27px;
-  }
 }
 
 .footer__text {
@@ -129,7 +88,6 @@
   line-height: 110%;
   text-align: center;
   color: rgba(16, 16, 16, 0.5);
-
   margin-top: 20px;
   padding-bottom: 10px;
   padding: 0 20px 10px 20px;

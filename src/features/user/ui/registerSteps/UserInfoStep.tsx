@@ -1,16 +1,15 @@
 import { useContext, useState } from 'react';
+
 import { Dropdown, Input } from '@/shared/component';
+import { ArrowIcon } from '@/shared/icons/ArrowIcon';
+import { ClouseIcon } from '@/shared/icons/ClouseIcon';
+import { Calendar, Modal, NavButtons } from '@/widgets';
 
 import { RegisterContext } from '../RegisterStepper';
-
 import form from '../styles/form.module.scss';
-import { Calendar, Modal, NavButtons } from '@/widgets';
-import { ClouseIcon } from '@/shared/icons/ClouseIcon';
-import { ArrowIcon } from '@/shared/icons/ArrowIcon';
-import { styleText } from 'util';
 
 export const UserInfoStep = () => {
-  const [_, setSelectedDate] = useState<{
+  const [, setSelectedDate] = useState<{
     year: number | null;
     month: number | null;
     day: number | null;
@@ -27,8 +26,8 @@ export const UserInfoStep = () => {
       {active ? (
         <Modal>
           <div className={form.calendar__wrapper}>
-            <div className="container ">
-              <div className={form.icon} onClick={() => setActive(false)}>
+            <div className="container">
+              <div className={form.clouse_icon} onClick={() => setActive(false)}>
                 <ClouseIcon />
               </div>
               <Calendar setIsActive={() => setActive(false)} setDate={setSelectedDate} />

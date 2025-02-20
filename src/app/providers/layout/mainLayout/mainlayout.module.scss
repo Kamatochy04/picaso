@@ -56,6 +56,20 @@
   overflow-y: scroll;
   padding-top: 56px;
   padding-bottom: 93px;
+  &::-webkit-scrollbar {
+    width: 0; /* Устанавливаем ширину полосы прокрутки в 0 */
+    height: 0; /* Устанавливаем высоту полосы прокрутки в 0 */
+  }
+
+  /* Убираем полосу прокрутки в Firefox */
+  scrollbar-width: none; /* Устанавливаем ширину полосы прокрутки в none */
+
+  /* Убираем полосу прокрутки в IE и Edge */
+  -ms-overflow-style: none; /* Устанавливаем стиль полосы прокрутки в none */
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+  }
 }
 
 .footer {

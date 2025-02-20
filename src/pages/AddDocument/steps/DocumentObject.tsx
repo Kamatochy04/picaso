@@ -1,14 +1,20 @@
+import { useContext, useState } from 'react';
+
 import { Dropdown, Input } from '@/shared/component';
 import { Block, NavButtons } from '@/widgets';
 
 import styles from '../ui/addDoc.module.scss';
-import { useContext, useState } from 'react';
 import { DocumentContext } from '../ui/AddDocument';
 
 export const DocumentObject = () => {
-  const [text, setText] = useState('1ABCD23EFGH456789');
-
+  const [documentObject, setDocumentObject] = useState('');
+  const [mark, setMark] = useState('');
+  const [text, setText] = useState('');
   const context = useContext(DocumentContext);
+
+  const handleSelect = (e: any) => {
+    setDocumentObject(e);
+  };
 
   return (
     <>
@@ -17,19 +23,23 @@ export const DocumentObject = () => {
           <Dropdown
             label="Предмет заключения документа"
             options={[{ value: 'Движимое имущество', label: 'Движимое имущество' }]}
-            onSelect={() => {}}
+            onSelect={handleSelect}
           />
 
-          <Input
-            label="VIN-код (идентификационный номер)"
-            value={text}
-            onChange={(event) => setText(event.target.value)}
-          />
-          <Input
-            label="Марка движимого имущества"
-            value="LAND ROVER RANGE ROVER AUTOBIO..."
-            disabled
-          />
+          {documentObject ? (
+            <>
+              <Input
+                label="VIN-код (идентификационный номер)"
+                value={text}
+                onChange={(event) => setText(event.target.value)}
+              />
+              <Input
+                onChange={(e) => setMark(e.target.value)}
+                label="Марка движимого имущества"
+                value={mark}
+              />
+            </>
+          ) : null}
         </Block>
       </div>
 

@@ -1,11 +1,13 @@
 import { ComponentProps, FC } from 'react';
-import styles from './input.module.scss';
+
 import { SearchIcon } from '@/shared/icons/SearchIcon';
+
+import styles from './input.module.scss';
 
 type InputProps = ComponentProps<'input'> & {
   className?: string;
   label?: string;
-  valut?: 'RUB' | 'BYN';
+  valut?: string;
   isSearch?: boolean;
 };
 

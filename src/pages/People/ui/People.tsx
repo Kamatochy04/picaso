@@ -1,15 +1,16 @@
 import { useNavigate } from 'react-router-dom';
+
 import { Input } from '@/shared/component';
 import { Block, UserItem } from '@/widgets';
 
-import styles from './people.module.scss';
-
 import user from '@shared/icons/User.svg';
+
+import styles from './people.module.scss';
 
 export const People = () => {
   const navigate = useNavigate();
   return (
-    <div className={`container show-anim ${styles.container}`}>
+    <div className={'container show-anim'}>
       <Block className={styles.container}>
         <Input />
         <div className={styles.add__button}>
@@ -25,18 +26,28 @@ export const People = () => {
             onClick={() => navigate('/chat')}
           />
           <UserItem
-            userName={'Александр А.'}
-            lastTime={'в сети'}
+            userName={'Александра А.'}
+            lastTime={'были 10 дек 2024 в 12:00'}
             onClick={() => navigate('/chat')}
           />
           <UserItem
-            userName={'Александр А.'}
-            lastTime={'в сети'}
+            userName={'Богдан Б.'}
+            lastTime={'были 10 дек 2024 в 14:00'}
             onClick={() => navigate('/chat')}
           />
           <UserItem
-            userName={'Александр А.'}
-            lastTime={'в сети'}
+            userName={'Богдана Б.'}
+            lastTime={'были 10 дек 2024 в 16:00'}
+            onClick={() => navigate('/chat')}
+          />
+          <UserItem
+            userName={'Валентин В.'}
+            lastTime={'были 10 дек 2024 в 18:00'}
+            onClick={() => navigate('/chat')}
+          />
+          <UserItem
+            userName={'Валентина В.'}
+            lastTime={'были 10 дек 2024 в 20:00'}
             onClick={() => navigate('/chat')}
           />
         </div>

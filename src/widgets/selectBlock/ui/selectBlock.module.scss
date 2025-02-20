@@ -22,15 +22,18 @@
   svg {
     height: 10px;
     width: 10px;
+    stroke-width: 10px !important;
+
     path {
       // color: red !important;
-      fill: #05f !important;
+      fill: dark !important;
+      stroke-width: 10px !important;
     }
   }
 }
 
 .active {
-  background: #05f;
+  background: #000;
   p {
     font-weight: 400;
     font-size: 14px;

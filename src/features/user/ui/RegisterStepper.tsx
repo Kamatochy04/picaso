@@ -1,18 +1,17 @@
+import { createContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { Logo } from '@/shared/component';
 
-import { FirstStep } from './registerSteps/FirstStep';
-import { DocumentsStep } from './registerSteps/DocumentsSteps';
-import { PhoneStep } from './registerSteps/PhoneStep';
-
+import styles from './register.module.scss';
 import { CodeStep } from './registerSteps/CodeStep';
-import { UserInfoStep } from './registerSteps/UserInfoStep';
-import { createContext, useState } from 'react';
+import { DocumentStep } from './registerSteps/DocumentData';
+import { DocumentsStep } from './registerSteps/DocumentsSteps';
+import { FirstStep } from './registerSteps/FirstStep';
+import { PhoneStep } from './registerSteps/PhoneStep';
 import { PhotoStep } from './registerSteps/PhotoStep';
 import { TimerStep } from './registerSteps/TimerStep';
-
-import styles from './register.module.scss';
-import { useNavigate } from 'react-router-dom';
-import { DocumentStep } from './registerSteps/DocumentData';
+import { UserInfoStep } from './registerSteps/UserInfoStep';
 
 const registerSteps = [
   <FirstStep />,

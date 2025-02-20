@@ -1,12 +1,13 @@
-import { Block, DocumentMessage, ListItem, Message, UserHeader } from '@/widgets';
-import { Input } from '@/shared/component';
-
-import styles from './chat.module.scss';
-
-import ArrowLineUp from '@shared/icons/ArrowLineUp.svg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { Input } from '@/shared/component';
 import { ClipIcon } from '@/shared/icons/ClipIcon';
+import { Block, DocumentMessage, ListItem, Message, UserHeader } from '@/widgets';
+
+import ArrowLineUp from '@shared/icons/ArrowLineUp.svg';
+
+import styles from './chat.module.scss';
 
 export const Chatlayout = () => {
   const [showSetings, setShowSetings] = useState(false);
@@ -22,14 +23,14 @@ export const Chatlayout = () => {
       </div>
       <div className={styles.wrapper}>
         <div className={`container ${styles.height}`}>
-          <div className={styles.content}>
+          <Block className={styles.content}>
             <Message sender={'you'} text={'Привет'} />
             <Message sender={'he'} text={'Доброе утро!'} />
             <Message sender={'you'} text={'Вы продаете автомобиль?'} />
             <Message sender={'he'} text={'Я не понимаю о чём вы'} />
 
             <DocumentMessage userName="Иван И. " />
-          </div>
+          </Block>
         </div>
       </div>
       <div className={styles.footer}>

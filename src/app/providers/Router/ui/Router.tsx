@@ -10,8 +10,10 @@ import {
   Setings,
   SetingsLanguage,
 } from '@/pages';
-import { MainLayout } from '../../layout/mainLayout/MainLayout';
+
 import { Chatlayout } from '../../layout/chatLayout/ChatLayout';
+import { MainLayout } from '../../layout/mainLayout/MainLayout';
+
 export const Router = () => {
   return (
     <div>

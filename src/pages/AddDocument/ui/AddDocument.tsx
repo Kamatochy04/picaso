@@ -1,3 +1,5 @@
+import { createContext, useState } from 'react';
+
 import { UserHeader } from '@/widgets';
 
 import { FormatDocument } from '../steps/DocumentFormat';
@@ -6,7 +8,6 @@ import { Money } from '../steps/Money';
 import { Punkts } from '../steps/Punkts';
 
 import styles from './addDoc.module.scss';
-import { createContext, useState } from 'react';
 
 const steps = [<FormatDocument />, <DocumentObject />, <Money />, <Punkts />];
 

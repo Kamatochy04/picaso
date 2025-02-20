@@ -1,15 +1,17 @@
-import { Button } from '@/shared/component';
 import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { Button } from '@/shared/component';
+import { ArrowIcon } from '@/shared/icons/ArrowIcon';
 
 import styles from './navButton.module.scss';
-import { ArrowIcon } from '@/shared/icons/ArrowIcon';
-import { useNavigate } from 'react-router-dom';
 
 type NavButtonsTypes = {
   nextButtonClick: () => void;
   backButtonClick?: () => void;
   className?: string;
   buttonText?: string;
+  isShowArrow?: boolean;
 };
 
 export const NavButtons: FC<NavButtonsTypes> = ({
@@ -17,6 +19,7 @@ export const NavButtons: FC<NavButtonsTypes> = ({
   nextButtonClick,
   className,
   buttonText = 'Подтвердить',
+  isShowArrow = true,
 }) => {
   const navigate = useNavigate();
 
@@ -29,10 +32,12 @@ export const NavButtons: FC<NavButtonsTypes> = ({
   };
 
   return (
-    <div className={`${styles.container} ${className}`}>
-      <button className={styles.squar} onClick={() => toBackStep()}>
-        <ArrowIcon />
-      </button>
+    <div className={`${styles.container} ${className} ${isShowArrow ? '' : styles.line}`}>
+      {isShowArrow ? (
+        <button className={styles.squar} onClick={() => toBackStep()}>
+          <ArrowIcon />
+        </button>
+      ) : null}
       <Button variant="main" onClick={nextButtonClick} className={styles.button}>
         {buttonText}
       </Button>

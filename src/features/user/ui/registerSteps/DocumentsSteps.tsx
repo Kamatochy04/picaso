@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
 
-import { DocumentModel, NavButtons } from '@/widgets';
 import { RadioButton } from '@/shared/component';
-import { RegisterContext } from '../RegisterStepper';
+import { DocumentModel, NavButtons } from '@/widgets';
 
+import { RegisterContext } from '../RegisterStepper';
 import form from '../styles/form.module.scss';
 
 export const DocumentsStep = () => {
@@ -27,7 +27,7 @@ export const DocumentsStep = () => {
         onClouseModel={() => setOpenDoc(false)}
       />
       <form className={form.form}>
-        <div className={form.form__container}>
+        <div className={form.form__container_first}>
           <RadioButton
             label="Документ 1"
             value="doc_1"

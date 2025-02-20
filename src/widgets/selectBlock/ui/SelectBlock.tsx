@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
-import styles from './selectBlock.module.scss';
 
-// import checkimg from '../../../shared/icons/check.svg';
 import { CheckIcon } from '@/shared/icons/CheckIcon';
+
+import styles from './selectBlock.module.scss';
 
 type TSelectBlock = {
   text: string;
@@ -23,5 +23,3 @@ export const SelectBlock: FC<TSelectBlock> = ({ text }) => {
     </div>
   );
 };
-
-//<div className={styles.mark}></div>

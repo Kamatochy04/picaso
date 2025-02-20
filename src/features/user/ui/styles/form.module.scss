@@ -5,6 +5,13 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    &_first {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 109px;
+      // height: 112px;
+    }
   }
   &__button {
     margin-top: 40px;
@@ -168,4 +175,12 @@
     transition: all 0.3s;
     transform: rotate(90deg);
   }
+}
+
+.clouse_icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 10px;
+  margin-bottom: 10px;
 }

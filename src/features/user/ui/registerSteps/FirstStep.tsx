@@ -1,9 +1,10 @@
 import { useContext, useState } from 'react';
 
-import { Button, RadioButton } from '@/shared/component';
+import { RadioButton } from '@/shared/component';
+import { NavButtons } from '@/widgets';
 
-import form from '../styles/form.module.scss';
 import { RegisterContext } from '../RegisterStepper';
+import form from '../styles/form.module.scss';
 
 export const FirstStep = () => {
   const [selectedValue, setSelectedValue] = useState('individual');
@@ -40,13 +41,12 @@ export const FirstStep = () => {
         />
       </div>
 
-      <Button
+      <NavButtons
+        isShowArrow={false}
+        backButtonClick={() => context?.toSetStep(0)}
+        nextButtonClick={() => context?.toSetStep(1)}
         className={form.form__button}
-        variant="main"
-        onClick={() => context?.toSetStep(1)}
-      >
-        Подтвердить
-      </Button>
+      />
     </form>
   );
 };

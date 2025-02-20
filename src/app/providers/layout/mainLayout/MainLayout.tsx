@@ -1,12 +1,12 @@
+import { useEffect } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 import { Input } from '@/shared/component';
 
-import styles from './mainlayout.module.scss';
-
 import docks from '@shared/icons/Briefcase.svg';
 import setings from '@shared/icons/Gear.svg';
-import { useEffect } from 'react';
+
+import styles from './mainlayout.module.scss';
 
 export const MainLayout = () => {
   const navigate = useNavigate();

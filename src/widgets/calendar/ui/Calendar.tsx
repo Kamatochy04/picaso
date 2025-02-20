@@ -1,8 +1,11 @@
 import { FC, useState } from 'react';
-import { Block } from '@/widgets/block';
-import styles from './calendar.module.scss';
-import { days, months, years } from '../assets/date';
+
 import { Button } from '@/shared/component';
+import { Block } from '@/widgets/block';
+
+import { days, months, years } from '../assets/date';
+
+import styles from './calendar.module.scss';
 
 type CalendarProps = {
   setIsActive: () => void;
@@ -66,10 +69,10 @@ export const Calendar: FC<CalendarProps> = ({ setIsActive, setDate }) => {
 
         <div className={styles.wrapper}>
           <p className={styles.wrapper__title}>День</p>
-          <div className={styles.dey}>
+          <div className={styles.day}>
             {days.map((item, id) => (
               <div
-                className={`${styles.wrapper__dey} ${
+                className={`${styles.wrapper__day} ${
                   selectedDay === item ? styles.active : ''
                 }`}
                 key={id}
