@@ -1,8 +1,8 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import { store } from './store/store';
 import { Router } from './providers/Router';
+import { store } from './store/store';
 
 export const App = () => {
   return (

@@ -9,7 +9,23 @@ import { DocumentContext } from '../ui/AddDocument';
 const getFormattedDate = () => {
   const today = new Date();
   const day = String(today.getDate()).padStart(2, '0');
-  const month = today.toLocaleString('default', { month: 'long' });
+
+  const months = [
+    'января',
+    'февраля',
+    'марта',
+    'апреля',
+    'мая',
+    'июня',
+    'июля',
+    'августа',
+    'сентября',
+    'октября',
+    'ноября',
+    'декабря',
+  ];
+
+  const month = months[today.getMonth()];
   const year = today.getFullYear();
   return `${day} ${month} ${year}`;
 };
