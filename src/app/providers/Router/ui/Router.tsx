@@ -14,7 +14,6 @@ import {
 
 import { Chatlayout } from '../../layout/chatLayout/ChatLayout';
 import { MainLayout } from '../../layout/mainLayout/MainLayout';
-import './TimePicker.css';
 
 export const Router = () => {
   return (
