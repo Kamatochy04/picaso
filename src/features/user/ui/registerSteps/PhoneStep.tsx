@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
+
 import { Input } from '@/shared/component';
 import { NavButtons } from '@/widgets';
+
 import { RegisterContext } from '../RegisterStepper';
 import form from '../styles/form.module.scss';
 
@@ -26,8 +28,8 @@ export const PhoneStep: React.FC = () => {
         defaultValue="+"
       />
       <NavButtons
-        backButtonClick={() => context?.toSetStep(1)}
-        nextButtonClick={() => context?.toSetStep(3)}
+        backButtonClick={() => context?.toSetStep(2)}
+        nextButtonClick={() => context?.toSetStep(4)}
         className={form.form__button}
       />
     </form>

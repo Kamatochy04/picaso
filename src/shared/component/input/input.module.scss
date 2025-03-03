@@ -18,7 +18,7 @@
   font-size: 14px;
   line-height: 110%;
   color: rgba(16, 16, 16, 0.25);
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .valut {
@@ -42,4 +42,11 @@
   & + input {
     padding-left: 40px;
   }
+}
+
+.right__icon {
+  height: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
 }

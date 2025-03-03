@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 
-import { RegisterContext } from '../RegisterStepper';
-
-import form from '../styles/form.module.scss';
 import { NavButtons } from '@/widgets';
+
+import { RegisterContext } from '../RegisterStepper';
+import form from '../styles/form.module.scss';
 
 export const PhotoStep = () => {
   const context = useContext(RegisterContext);
@@ -14,8 +14,8 @@ export const PhotoStep = () => {
       <button className={form.pasport__button}>сфотографировать</button>
 
       <NavButtons
-        backButtonClick={() => context?.toSetStep(5)}
-        nextButtonClick={() => context?.toSetStep(7)}
+        backButtonClick={() => context?.toSetStep(6)}
+        nextButtonClick={() => context?.toSetStep(8)}
         className={form.form__button}
       />
     </form>

@@ -1,5 +1,6 @@
-import { Button, Logo } from '@/shared/component';
 import { useNavigate } from 'react-router-dom';
+
+import { Button } from '@/shared/component';
 
 import styles from './preview.module.scss';
 
@@ -8,18 +9,22 @@ export const PreviewScreen = () => {
 
   return (
     <div className={styles.preview}>
-      <div className={`container `}>
+      <div className={'container '}>
         <div className={styles.box}>
           <div className={styles.preview__container}>
-            <Logo size="XL" />
-            <h3 className={styles.sub_title}>новый документооборот</h3>
-
             <Button
               variant="main"
               className={styles.button}
               onClick={() => navigate('/register')}
             >
-              Начать
+              English
+            </Button>
+            <Button
+              variant="main"
+              className={`${styles.button_2} ${styles.button}`}
+              onClick={() => navigate('/register')}
+            >
+              Русский
             </Button>
           </div>
         </div>

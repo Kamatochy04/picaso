@@ -7,5 +7,5 @@ type LogoTypeProps = LogoVariants & {
 };
 
 export const Logo: FC<LogoTypeProps> = ({ className, size }) => {
-  return <div className={logoVarinat({ size, className })}>SYS</div>;
+  return <div className={logoVarinat({ size, className })}>SYSTEMFROMTHEFUTURE</div>;
 };

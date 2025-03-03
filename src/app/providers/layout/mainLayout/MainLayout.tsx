@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 import { Input } from '@/shared/component';
+import { DocumentIcon } from '@/shared/icons/navIcon/DocumentIcon';
+import { ProfileIcon } from '@/shared/icons/navIcon/Profile';
 
 import docks from '@shared/icons/Briefcase.svg';
 import setings from '@shared/icons/Gear.svg';
@@ -17,6 +19,7 @@ export const MainLayout = () => {
       navigate('/previe');
     }
   }, []);
+
   return (
     <div className={`${styles.app} show-anim `}>
       <header className={styles.header}>
@@ -56,7 +59,9 @@ export const MainLayout = () => {
               }
               to={'people'}
             >
-              <div className={styles.footer__sercle}></div>
+              <div className={styles.footer__sercle}>
+                <ProfileIcon />
+              </div>
               <p className={styles.footer__text}>Контакты</p>
             </NavLink>
             <NavLink
@@ -65,7 +70,9 @@ export const MainLayout = () => {
               }
               to={'/'}
             >
-              <div className={styles.footer__sercle}></div>
+              <div className={styles.footer__sercle}>
+                <div className={styles.sercle_icon}></div>
+              </div>
               <p className={styles.footer__text}>Диалоги</p>
             </NavLink>
             <NavLink
@@ -74,7 +81,9 @@ export const MainLayout = () => {
               }
               to={'documents'}
             >
-              <div className={styles.footer__sercle}></div>
+              <div className={styles.footer__sercle}>
+                <DocumentIcon />
+              </div>
               <p className={styles.footer__text}>Документы</p>
             </NavLink>
           </div>

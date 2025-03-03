@@ -56,12 +56,13 @@ export const Chatlayout = () => {
             </div>
             {showSetings ? (
               <div className={`${styles.list} `}>
+                <ListItem text={'Пригласить специалиста'} isBlocked />
                 <ListItem
                   className="show"
-                  text={'Добавить документ'}
+                  text={'Разработать документ'}
                   onClick={() => navigate('/add-document')}
                 />
-                <ListItem text={'Разработать документ'} isBlocked />
+                <ListItem text={'Добавить документ'} isBlocked />
               </div>
             ) : null}
           </Block>

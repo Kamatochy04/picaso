@@ -1,10 +1,13 @@
 import { createContext, useState } from 'react';
-import styles from './register.module.scss';
-import { Logo } from '@/shared/component';
-import { PhoneStep } from './loginSteps/PhoneStep';
-import { CodeStep } from './loginSteps/CodeStep';
-import { TimerStep } from './loginSteps/TimerStep';
 import { useNavigate } from 'react-router-dom';
+
+import { Logo } from '@/shared/component';
+import { Block } from '@/widgets';
+
+import { CodeStep } from './loginSteps/CodeStep';
+import { PhoneStep } from './loginSteps/PhoneStep';
+import { TimerStep } from './loginSteps/TimerStep';
+import styles from './register.module.scss';
 
 const loginSteps = [<PhoneStep />, <CodeStep />, <TimerStep />];
 
@@ -38,14 +41,16 @@ export const LoginStepper = () => {
             {step === 2 ? null : <p className={styles.text}>{loginStepsText[step]}</p>}
 
             {loginSteps[step]}
-
-            {step == 2 ? null : (
-              <p className={styles.register__footer}>
-                если вы не зарегистрированы,{' '}
-                <span onClick={() => navigate('/register')}>нажмите здесь</span>
-              </p>
-            )}
           </div>
+          {step == 0 || step == 1 ? (
+            <Block className={styles.block}>
+              <p className={styles.block__title}>Регистрация</p>
+              <p className={styles.block__footer_l}>
+                Если не зарегистрированы,{` `}
+                <span onClick={() => navigate('/register')}>нажмите здесь</span>{' '}
+              </p>
+            </Block>
+          ) : null}
         </div>
       </div>
     </LoginContext.Provider>

@@ -49,14 +49,24 @@ export const FormatDocument = () => {
             onSelect={() => {}}
           />
           <Input label="Дата создания документа" placeholder={currentDate} disabled />
+
+          <Dropdown
+            label="Предмет договора"
+            options={[{ value: 'adsada', label: 'Движимое имущество' }]}
+            onSelect={() => {}}
+          />
+          <Dropdown
+            label="Категория движимого имущества"
+            options={[{ value: 'adsada', label: 'Транспортное средство «В»' }]}
+            onSelect={() => {}}
+          />
+          <NavButtons
+            className={styles.padding}
+            backButtonClick={() => context?.changeStep(-1)}
+            nextButtonClick={() => context?.changeStep(1)}
+          />
         </Block>
       </div>
-      <Block className={styles.padding}>
-        <NavButtons
-          backButtonClick={() => context?.changeStep(0)}
-          nextButtonClick={() => context?.changeStep(1)}
-        />
-      </Block>
     </>
   );
 };

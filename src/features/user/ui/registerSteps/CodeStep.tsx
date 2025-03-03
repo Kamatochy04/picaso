@@ -1,8 +1,8 @@
 import { useContext, useRef } from 'react';
 
-import { RegisterContext } from '../RegisterStepper';
 import { NavButtons } from '@/widgets';
 
+import { RegisterContext } from '../RegisterStepper';
 import form from '../styles/form.module.scss';
 
 export const CodeStep = () => {
@@ -36,8 +36,8 @@ export const CodeStep = () => {
       </div>
 
       <NavButtons
-        backButtonClick={() => context?.toSetStep(2)}
-        nextButtonClick={() => context?.toSetStep(4)}
+        backButtonClick={() => context?.toSetStep(3)}
+        nextButtonClick={() => context?.toSetStep(5)}
         className={form.form__button}
       />
     </form>

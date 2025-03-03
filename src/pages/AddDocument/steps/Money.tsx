@@ -12,12 +12,12 @@ export const Money = () => {
   const context = useContext(DocumentContext);
 
   const formatNumber = (number: string) => {
-    return number.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    return number.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };
 
   const handleNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = event.target.value.replace(/\D/g, ''); // Удаление всех символов, кроме цифр
-    setPrice(formatNumber(inputValue)); // Форматирование числа с пробелами
+    const inputValue = event.target.value.replace(/\D/g, '');
+    setPrice(formatNumber(inputValue));
   };
 
   return (
@@ -30,7 +30,12 @@ export const Money = () => {
             onSelect={(value) => setValut(value)}
           />
 
-          <Input label="Цена" valut={valut} value={price} onChange={handleNumberChange} />
+          <Input
+            label="Цена"
+            valut={valut === 'RUB' ? '₽' : ''}
+            value={price}
+            onChange={handleNumberChange}
+          />
           <Dropdown
             label="Форма"
             options={[
@@ -40,16 +45,22 @@ export const Money = () => {
             onSelect={() => {}}
           />
           <Input label="Номер счёта" />
-          <Input label="Собственник счёта" />
+          <Dropdown
+            label="Получатель"
+            options={[
+              { value: 'RUB', label: 'Ника Д.' },
+              { value: 'RUB', label: 'Даша Г.' },
+              { value: 'RUB', label: 'Миша М.' },
+            ]}
+            onSelect={(value) => setValut(value)}
+          />
+          <NavButtons
+            className={styles.padding}
+            backButtonClick={() => context?.changeStep(-1)}
+            nextButtonClick={() => context?.changeStep(+1)}
+          />
         </Block>
       </div>
-
-      <Block className={styles.padding}>
-        <NavButtons
-          backButtonClick={() => context?.changeStep(1)}
-          nextButtonClick={() => context?.changeStep(3)}
-        />
-      </Block>
     </>
   );
 };

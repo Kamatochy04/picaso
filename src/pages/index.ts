@@ -5,3 +5,4 @@ export { SetingsLanguage } from './SetingsLanguage/index';
 export { Documents } from './DocumentPage/index';
 export { People } from './People/index';
 export { AddDocument } from './AddDocument/index';
+export { SecretPage } from './SecretPage/SecretPage';

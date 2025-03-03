@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import form from '../styles/form.module.scss';
 import { useNavigate } from 'react-router-dom';
+
+import form from '../styles/form.module.scss';
 
 export const TimerStep = () => {
   const [seconds, setSeconds] = useState(5);
@@ -21,7 +22,9 @@ export const TimerStep = () => {
 
   return (
     <form className={form.form}>
-      <p className={form.phone__label}>Перенаправление через {seconds} секунд</p>
+      <p className={form.phone__label}>
+        Автоматическое перенаправление внутрь сервиса через {seconds} сек.{' '}
+      </p>
     </form>
   );
 };

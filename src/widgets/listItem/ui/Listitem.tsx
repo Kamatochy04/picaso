@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
+
 import arrowImg from '@shared/icons/CaretRight.svg';
 
 import styles from './listItem.module.scss';
@@ -10,6 +11,7 @@ type ListItemProps = {
   onClick?: () => void;
   isArrow?: boolean;
   className?: string;
+  icon?: React.ReactNode;
   isBlocked?: boolean;
 };
 
@@ -20,6 +22,7 @@ export const ListItem: FC<ListItemProps> = ({
   text,
   isBlocked,
   className,
+  icon,
   onClick,
 }) => {
   const [arrow, setArrow] = useState<React.ReactNode>('');
@@ -48,7 +51,11 @@ export const ListItem: FC<ListItemProps> = ({
       } ${className}`}
       onClick={() => handelClick()}
     >
-      <div className={styles.block__mark}></div>
+      {icon ? (
+        <div className={styles.icon}>{icon}</div>
+      ) : (
+        <div className={styles.block__mark}></div>
+      )}
       <p className={styles.block__text}>{text}</p>
 
       {arrow}

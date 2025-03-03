@@ -9,6 +9,7 @@ type InputProps = ComponentProps<'input'> & {
   label?: string;
   valut?: string;
   isSearch?: boolean;
+  rightIcon?: React.ReactNode;
 };
 
 export const Input: FC<InputProps> = ({
@@ -16,6 +17,7 @@ export const Input: FC<InputProps> = ({
   className,
   label,
   valut,
+  rightIcon,
   ...props
 }) => {
   return (
@@ -28,6 +30,7 @@ export const Input: FC<InputProps> = ({
       ) : null}
 
       <input {...props} className={styles.input} />
+      <div className={styles.right__icon}>{rightIcon}</div>
       <p className={styles.valut}>{valut}</p>
     </label>
   );

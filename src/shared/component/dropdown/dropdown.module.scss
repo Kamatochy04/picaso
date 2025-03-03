@@ -36,12 +36,12 @@
   }
 }
 
-label {
+.label {
   font-weight: 400;
   font-size: 14px;
   line-height: 110%;
   color: rgba(16, 16, 16, 0.25);
-  margin-bottom: 5px;
+  margin-bottom: 10px !important;
 }
 
 .custom_select label {

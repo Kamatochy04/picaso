@@ -7,17 +7,20 @@ import {
   FirstScrean,
   People,
   PreviewScreen,
+  SecretPage,
   Setings,
   SetingsLanguage,
 } from '@/pages';
 
 import { Chatlayout } from '../../layout/chatLayout/ChatLayout';
 import { MainLayout } from '../../layout/mainLayout/MainLayout';
+import './TimePicker.css';
 
 export const Router = () => {
   return (
     <div>
       <Routes>
+        <Route path="/secret" element={<SecretPage />} />
         <Route path="/previe" element={<PreviewScreen />} />
         <Route path="/register" element={<RegisterStepper />} />
         <Route path="/login" element={<LoginStepper />} />

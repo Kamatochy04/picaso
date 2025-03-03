@@ -59,8 +59,8 @@ export const UserInfoStep = () => {
         </div>
 
         <NavButtons
-          backButtonClick={() => context?.toSetStep(3)}
-          nextButtonClick={() => context?.toSetStep(5)}
+          backButtonClick={() => context?.toSetStep(4)}
+          nextButtonClick={() => context?.toSetStep(6)}
           className={form.form__button}
         />
       </form>

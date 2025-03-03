@@ -42,3 +42,12 @@
 .blocked {
   color: rgba(16, 16, 16, 0.25) !important;
 }
+
+.icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

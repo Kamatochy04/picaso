@@ -29,7 +29,6 @@ export const FirstStep = () => {
           value="legal"
           checked={selectedValue === 'legal'}
           className={selectedValue !== 'legal' ? form.not_active : ''}
-          // onChange={handleRadioChange}
         />
         <RadioButton
           isBlockd={true}
@@ -37,7 +36,6 @@ export const FirstStep = () => {
           value="er"
           checked={selectedValue === 'er'}
           className={selectedValue !== 'legal' ? form.not_active : ''}
-          // onChange={handleRadioChange}
         />
       </div>
 

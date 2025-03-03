@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import styles from './dropdown.module.scss';
+
 import { ArrowIcon } from '@/shared/icons/ArrowIcon';
+
+import styles from './dropdown.module.scss';
 
 interface Option {
   value: string;
@@ -37,7 +39,7 @@ export const Dropdown: React.FC<CustomSelectProps> = ({
 
   return (
     <div>
-      <label>{label}</label>
+      <p className={styles.label}>{label}</p>
       <div className={styles.custom_select} onClick={() => handleClick()}>
         <div className={styles.select_box} onClick={() => setIsOpen(!isOpen)}>
           <div className={styles.selected_value}>
