@@ -3,7 +3,9 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 import { Input } from '@/shared/component';
 import { DocumentIcon } from '@/shared/icons/navIcon/DocumentIcon';
+import { DocIconActive } from '@/shared/icons/navIcon/DocumentIconActive';
 import { ProfileIcon } from '@/shared/icons/navIcon/Profile';
+import { ProfileIconActive } from '@/shared/icons/navIcon/ProfileIconActive';
 
 import docks from '@shared/icons/Briefcase.svg';
 import setings from '@shared/icons/Gear.svg';
@@ -59,10 +61,14 @@ export const MainLayout = () => {
               }
               to={'people'}
             >
-              <div className={styles.footer__sercle}>
-                <ProfileIcon />
-              </div>
-              <p className={styles.footer__text}>Контакты</p>
+              {({ isActive }) => (
+                <>
+                  <div className={styles.footer__sercle}>
+                    {isActive ? <ProfileIconActive /> : <ProfileIcon />}
+                  </div>
+                  <p className={styles.footer__text}>Контакты</p>
+                </>
+              )}
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -70,10 +76,18 @@ export const MainLayout = () => {
               }
               to={'/'}
             >
-              <div className={styles.footer__sercle}>
-                <div className={styles.sercle_icon}></div>
-              </div>
-              <p className={styles.footer__text}>Диалоги</p>
+              {({ isActive }) => (
+                <>
+                  <div className={styles.footer__sercle}>
+                    {isActive ? (
+                      <div className={styles.sercle_dark}></div>
+                    ) : (
+                      <div className={styles.sercle_icon}></div>
+                    )}
+                  </div>
+                  <p className={styles.footer__text}>Диалоги</p>
+                </>
+              )}
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -81,10 +95,14 @@ export const MainLayout = () => {
               }
               to={'documents'}
             >
-              <div className={styles.footer__sercle}>
-                <DocumentIcon />
-              </div>
-              <p className={styles.footer__text}>Документы</p>
+              {({ isActive }) => (
+                <>
+                  <div className={styles.footer__sercle}>
+                    {isActive ? <DocIconActive /> : <DocumentIcon />}
+                  </div>
+                  <p className={styles.footer__text}>Документы</p>
+                </>
+              )}
             </NavLink>
           </div>
         </div>

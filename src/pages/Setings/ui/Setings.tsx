@@ -25,16 +25,16 @@ export const Setings = () => {
           </div>
         </div>
         <Block>
-          <ListItem text={'Мои файлы'} isBorder isBlocked />
-          <ListItem text={'Мои документы'} />
-        </Block>
-        <Block>
-          <ListItem text={'Русский язык'} onClick={() => navigate('language')} />
+          <ListItem text={'Мои уведомления'} isBlocked />
         </Block>
         <Block>
           <ListItem text={'Настройки сервиса'} isBlocked isBorder />
           <ListItem text={'Настройки чата'} isBlocked />
         </Block>
+        <Block>
+          <ListItem text={'Русский язык'} onClick={() => navigate('language')} />
+        </Block>
+        <p className={styles.version}>ver.1.0</p>
       </div>
     </div>
   );

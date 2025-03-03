@@ -62,3 +62,16 @@
 .hiden {
   overflow: hidden !important;
 }
+
+.version {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  color: rgba(16, 16, 16, 0.5);
+
+  position: absolute;
+  bottom: 100px;
+  left: 49.3%;
+}
