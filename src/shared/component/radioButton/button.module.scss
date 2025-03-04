@@ -4,8 +4,8 @@
   width: 23px;
   height: 23px;
   border-radius: 50%;
-  // background: #eeeeee;
-  border: 1px solid #000;
+  background: none !important;
+  border: 1px solid #000 !important;
   transition: all 0.3s;
   &::before {
     animation: show 2s;
@@ -23,6 +23,10 @@
     opacity: 0.5;
     & .label__text {
       pointer-events: none;
+    }
+    .radio__button {
+      border: none !important;
+      background: #bcbcbc !important;
     }
   }
   input {

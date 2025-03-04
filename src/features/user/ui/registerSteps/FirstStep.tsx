@@ -7,7 +7,7 @@ import { RegisterContext } from '../RegisterStepper';
 import form from '../styles/form.module.scss';
 
 export const FirstStep = () => {
-  const [selectedValue, setSelectedValue] = useState('individual');
+  const [selectedValue, setSelectedValue] = useState('');
   const context = useContext(RegisterContext);
 
   const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
