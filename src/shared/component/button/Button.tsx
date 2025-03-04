@@ -8,13 +8,7 @@ type ButtonProps = ComponentProps<'button'> &
     children?: React.ReactNode;
   };
 
-export const Button: FC<ButtonProps> = ({
-  variant,
-  className,
-  children,
-  color,
-  ...props
-}) => {
+export const Button: FC<ButtonProps> = ({ variant, className, children, ...props }) => {
   return (
     <button {...props} className={buttonVariants({ variant, className })}>
       {children}

@@ -1,16 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 
-import styles from './setings.module.scss';
-
-import person from '@shared/img/Preview.png';
-import exportIcon from '@shared/icons/Export.svg';
 import { Block, ListItem } from '@/widgets';
+
+import exportIcon from '@shared/icons/Export.svg';
+import person from '@shared/img/Preview.png';
+
+import styles from './setings.module.scss';
 
 export const Setings = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={` show-anim`}>
+    <div className={' show-anim'}>
       <div className={`${styles.setings} container`}>
         <div className={styles.header}>
           <img src={person} alt="thubnail" />

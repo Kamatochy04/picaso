@@ -32,6 +32,15 @@
   width: 100%;
 }
 
+.btn__wrapper {
+  margin: 0% auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .chat {
   padding-top: 20px;
   padding-bottom: 10px;
@@ -122,6 +131,12 @@
       fill: var(--main-color) !important;
     }
   }
+}
+
+.clouse_icon {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 @media (max-height: 840px) {

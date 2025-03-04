@@ -3,9 +3,15 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { Button } from '@/shared/component';
 import { Block } from '@/widgets/block';
 
-import { days, months, years } from '../assets/date';
-
 import styles from './calendar.module.scss';
+
+const debounce = (func: (...args: any[]) => void, delay: number) => {
+  let timeoutId: NodeJS.Timeout;
+  return (...args: any[]) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+};
 
 type CalendarProps = {
   setIsActive: () => void;
@@ -15,54 +21,110 @@ type CalendarProps = {
     day: number | null;
   }) => void;
 };
-
 export const Calendar: FC<CalendarProps> = ({ setIsActive, setDate }) => {
-  const [selectedYear, setSelectedYear] = useState<number | null>(years[0]);
-  const [selectedMonth, setSelectedMonth] = useState<number | null>(months[0]);
-  const [selectedDay, setSelectedDay] = useState<number | null>(days[0]);
+  const currentDate = new Date();
+  const [years] = useState(
+    Array.from({ length: 100 }, (_, i) => currentDate.getFullYear() - 50 + i)
+  );
+  const [months] = useState(Array.from({ length: 12 }, (_, i) => i + 1));
+  const [days, setDays] = useState<number[]>([]);
 
-  const yearRef = useRef<HTMLDivElement | null>(null);
-  const monthRef = useRef<HTMLDivElement | null>(null);
-  const dayRef = useRef<HTMLDivElement | null>(null);
+  const [selectedYear, setSelectedYear] = useState<number>(currentDate.getFullYear());
+  const [selectedMonth, setSelectedMonth] = useState<number>(currentDate.getMonth() + 1);
+  const [selectedDay, setSelectedDay] = useState<number>(currentDate.getDate());
 
-  const handleScroll = (
-    ref: React.RefObject<HTMLDivElement>,
-    setter: (value: number) => void,
-    items: number[]
-  ) => {
-    if (ref.current) {
-      const scrollLeft = ref.current.scrollLeft;
-      const itemWidth = ref.current.children[0]?.clientWidth || 0;
-      const index = Math.floor(scrollLeft / itemWidth); // Используем floor вместо round
-      if (items[index] !== undefined) {
-        setter(items[index]);
+  const yearRef = useRef<HTMLDivElement>(null);
+  const monthRef = useRef<HTMLDivElement>(null);
+  const dayRef = useRef<HTMLDivElement>(null);
+
+  const getDaysInMonth = (year: number, month: number) => {
+    return new Date(year, month, 0).getDate();
+  };
+
+  // Обновление дней при изменении года или месяца
+  useEffect(() => {
+    const daysCount = getDaysInMonth(selectedYear, selectedMonth);
+    setDays(Array.from({ length: daysCount }, (_, i) => i + 1));
+  }, [selectedYear, selectedMonth]);
+
+  // Функция для расчета центрального элемента
+  const calculateCenterElement = (container: HTMLDivElement) => {
+    const containerRect = container.getBoundingClientRect();
+    const centerX = containerRect.left + containerRect.width / 2;
+
+    let closestElement: Element | null = null;
+    let minDistance = Infinity;
+
+    container.childNodes.forEach((child) => {
+      const childRect = (child as Element).getBoundingClientRect();
+      const childCenterX = childRect.left + childRect.width / 2;
+      const distance = Math.abs(childCenterX - centerX);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestElement = child as Element;
       }
+    });
+
+    return closestElement;
+  };
+
+  // Обработчик скролла
+  const handleScroll = (type: 'year' | 'month' | 'day') => (_e: React.WheelEvent) => {
+    const container =
+      type === 'year'
+        ? yearRef.current
+        : type === 'month'
+        ? monthRef.current
+        : dayRef.current;
+
+    if (!container) return;
+
+    const closestElement = calculateCenterElement(container);
+    if (!closestElement) return;
+
+    const value = parseInt(closestElement.getAttribute('data-value') || '0');
+
+    // Плавная прокрутка к выбранному элементу
+    closestElement.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    });
+
+    // Обновление состояния
+    switch (type) {
+      case 'year':
+        setSelectedYear(value);
+        break;
+      case 'month':
+        setSelectedMonth(value);
+        break;
+      case 'day':
+        setSelectedDay(value);
+        break;
     }
   };
 
+  // Инициализация начальной позиции скролла
   useEffect(() => {
-    const yearScrollHandler = () => handleScroll(yearRef, setSelectedYear, years);
-    const monthScrollHandler = () => handleScroll(monthRef, setSelectedMonth, months);
-    const dayScrollHandler = () => handleScroll(dayRef, setSelectedDay, days);
-
-    yearRef.current?.addEventListener('scroll', yearScrollHandler);
-    monthRef.current?.addEventListener('scroll', monthScrollHandler);
-    dayRef.current?.addEventListener('scroll', dayScrollHandler);
-
-    // Убедимся, что контейнеры начинаются с первого элемента
-    yearRef.current?.scrollTo(0, 0);
-    monthRef.current?.scrollTo(0, 0);
-    dayRef.current?.scrollTo(0, 0);
-
-    return () => {
-      yearRef.current?.removeEventListener('scroll', yearScrollHandler);
-      monthRef.current?.removeEventListener('scroll', monthScrollHandler);
-      dayRef.current?.removeEventListener('scroll', dayScrollHandler);
+    const scrollToSelected = (container: HTMLDivElement | null, value: number) => {
+      if (!container) return;
+      const element = container.querySelector(`[data-value="${value}"]`);
+      element?.scrollIntoView({ inline: 'center' });
     };
+
+    scrollToSelected(yearRef.current, selectedYear);
+    scrollToSelected(monthRef.current, selectedMonth);
+    scrollToSelected(dayRef.current, selectedDay);
   }, []);
 
   const handleSelectDate = () => {
-    setDate({ year: selectedYear, month: selectedMonth, day: selectedDay });
+    setDate({
+      year: selectedYear,
+      month: selectedMonth,
+      day: selectedDay,
+    });
     setIsActive();
   };
 
@@ -72,66 +134,69 @@ export const Calendar: FC<CalendarProps> = ({ setIsActive, setDate }) => {
       <p className={styles.descr}>
         Выберите информацию, точно также, как в вашем внутреннем паспорте
       </p>
+
       <div className={styles.date}>
+        {/* Годы */}
         <div className={styles.wrapper}>
           <p className={styles.wrapper__title}>Год</p>
-          <div className={styles.year} ref={yearRef}>
-            {years.map((item, id) => (
+          <div ref={yearRef} onWheel={handleScroll('year')} className={styles.year}>
+            {years.map((year) => (
               <div
+                key={year}
+                data-value={year}
                 className={`${styles.wrapper__year} ${
-                  selectedYear === item ? styles.active : ''
+                  selectedYear === year ? styles.active : ''
                 }`}
-                key={id}
-                data-value={item}
-                data-type="year"
               >
-                {item}
+                {year}
               </div>
             ))}
           </div>
         </div>
 
+        {/* Месяцы */}
         <div className={styles.wrapper}>
           <p className={styles.wrapper__title}>Месяц</p>
-          <div className={styles.month} ref={monthRef}>
-            {months.map((item, id) => (
+          <div ref={monthRef} onWheel={handleScroll('month')} className={styles.month}>
+            {months.map((month) => (
               <div
+                key={month}
+                data-value={month}
                 className={`${styles.wrapper__month} ${
-                  selectedMonth === item ? styles.active : ''
+                  selectedMonth === month ? styles.active : ''
                 }`}
-                key={id}
-                data-value={item}
-                data-type="month"
               >
-                {item}
+                {month.toString().padStart(2, '0')}
               </div>
             ))}
           </div>
         </div>
 
+        {/* Дни */}
         <div className={styles.wrapper}>
           <p className={styles.wrapper__title}>День</p>
-          <div className={styles.day} ref={dayRef}>
-            {days.map((item, id) => (
+          <div ref={dayRef} onWheel={handleScroll('day')} className={styles.day}>
+            {days.map((day) => (
               <div
+                key={day}
+                data-value={day}
                 className={`${styles.wrapper__day} ${
-                  selectedDay === item ? styles.active : ''
+                  selectedDay === day ? styles.active : ''
                 }`}
-                key={id}
-                data-value={item}
-                data-type="day"
               >
-                {item}
+                {day.toString().padStart(2, '0')}
               </div>
             ))}
           </div>
         </div>
       </div>
+
       <div className={styles.buttons}>
         <Button variant="main" onClick={handleSelectDate}>
           Выбрать
         </Button>
       </div>
+
       <p className={styles.footer__text}>
         если вы зарегистрированы, <span>нажмите здесь</span>
       </p>

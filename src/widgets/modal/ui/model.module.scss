@@ -3,7 +3,9 @@
   height: 100vh;
   background: #000000b7;
 
-  position: absolute;
+  position: fixed;
+  bottom: 0;
+  top: 0;
   top: 0; /* Измените значения по вашему усмотрению */
   left: 0; /* Измените значения по вашему усмотрению */
   border: 1px solid #ccc;

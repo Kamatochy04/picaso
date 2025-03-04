@@ -10,7 +10,7 @@ type NavButtonsTypes = {
   nextButtonClick: () => void;
   backButtonClick?: () => void;
   className?: string;
-  buttonText?: string;
+  buttonText?: React.ReactNode;
   isShowArrow?: boolean;
 };
 

@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 55px 1fr;
   gap: 10px;
+  transition: all 0.3s;
 }
 
 .squar {
@@ -14,8 +15,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s;
 }
 
 .line {
   grid-template-columns: 1fr;
+  transition: all 0.3s;
+}
+
+.button {
+  height: 60px;
+  transition: all 0.3s;
 }

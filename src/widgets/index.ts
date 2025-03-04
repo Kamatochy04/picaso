@@ -9,3 +9,4 @@ export { Modal } from './modal/index';
 export { DocumentModel } from './document/index';
 export { UserHeader } from './userHeader/index';
 export { SelectBlock } from './selectBlock/index';
+export { ConfirDoc } from './confirmDoc/index';
